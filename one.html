@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introvert’s Survival Toolkit</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background: linear-gradient(120deg, #a8edea, #fed6e3);
+        overflow-x: hidden;
+        text-align: center;
+        color: #333;
+    }
+
+    header {
+        padding: 20px;
+        background: rgba(255,255,255,0.8);
+        font-size: 1.8em;
+        font-weight: bold;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 1.1em;
+        border: none;
+        border-radius: 10px;
+        background-color: #ff6f61;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    button:hover {
+        background-color: #ff3b2e;
+    }
+
+    .result {
+        margin-top: 20px;
+        font-size: 1.2em;
+        min-height: 100px;
+    }
+
+    img.meme {
+        margin-top: 10px;
+        max-width: 250px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Floating emoji animation */
+    .emoji {
+        position: fixed;
+        font-size: 2rem;
+        animation: float 8s linear infinite;
+        opacity: 0.8;
+    }
+    @keyframes float {
+        0% { transform: translateY(100vh) rotate(0deg); }
+        100% { transform: translateY(-10vh) rotate(360deg); }
+    }
+</style>
+</head>
+<body>
+
+<header>😳 Introvert’s Survival Toolkit 😅</header>
+
+<div>
+    <button onclick="showResponse('excuse')">Generate Awkward Excuse</button>
+    <button onclick="showResponse('comeback')">Give Me a Witty Comeback</button>
+    <button onclick="showResponse('escape')">Emergency Escape Plan</button>
+</div>
+
+<div class="result" id="result"></div>
+
+<audio id="awkwardSound" src="https://www.soundjay.com/human/sounds/cough-1.mp3"></audio>
+
+<script>
+const responses = {
+    excuse: [
+        { text: "Sorry, I can't come. My goldfish is having a birthday party.", meme: "https://i.imgflip.com/5p5t4q.jpg" },
+        { text: "I’m busy... re-watching the same series for the 5th time.", meme: "https://i.imgflip.com/4/4t0m5.jpg" },
+        { text: "Oh no, I promised my couch I’d stay home." }
+    ],
+    comeback: [
+        { text: "I’m not shy, I’m just on energy-saving mode.", meme: "https://i.imgflip.com/30b1gx.jpg" },
+        { text: "I’d agree with you, but then we’d both be wrong." },
+        { text: "You talk a lot for someone who’s wrong this often.", meme: "https://i.imgflip.com/1bij.jpg" }
+    ],
+    escape: [
+        { text: "Pretend you just got an urgent call from your cat.", meme: "https://i.imgflip.com/2fm6x.jpg" },
+        { text: "Say you forgot the oven on... even if you don’t have an oven." },
+        { text: "Suddenly remember you have to water your imaginary plants.", meme: "https://i.imgflip.com/5hg16z.jpg" }
+    ]
+};
+
+function showResponse(type) {
+    const sound = document.getElementById('awkwardSound');
+    sound.play();
+
+    const resArray = responses[type];
+    const randomRes = resArray[Math.floor(Math.random() * resArray.length)];
+
+    let output = `<p>${randomRes.text}</p>`;
+    if (randomRes.meme) {
+        output += `<img src="${randomRes.meme}" alt="Meme" class="meme">`;
+    }
+
+    document.getElementById('result').innerHTML = output;
+}
+
+// Floating emoji background
+function createEmoji() {
+    const emojiList = ["🐧", "😂", "😅", "🙃", "🥶"];
+    const emoji = document.createElement("div");
+    emoji.classList.add("emoji");
+    emoji.textContent = emojiList[Math.floor(Math.random() * emojiList.length)];
+    emoji.style.left = Math.random() * 100 + "vw";
+    emoji.style.animationDuration = (5 + Math.random() * 5) + "s";
+    document.body.appendChild(emoji);
+    setTimeout(() => emoji.remove(), 8000);
+}
+setInterval(createEmoji, 500);
+</script>
+
+</body>
+</html>

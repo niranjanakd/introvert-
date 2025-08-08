@@ -1,0 +1,97 @@
+.box{
+    border: 5px solid rgb(58, 163, 88);
+    width: 400px;
+    background-color:rgb(13, 179, 74);
+    
+   margin: 40px auto;
+    border-radius:10px;
+    padding:50px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+}
+.heading{
+    color: rgb(2, 2, 53);
+}
+.buttn{
+    border-radius:20px;
+    padding: 5px 20px;
+   color:rgb(13, 13, 13);
+   border:none;
+    font-weight:bold ;  
+}
+.profile{
+    border: 3px solid grey;
+   padding-left: 5px;
+    margin:200px auto;
+    width: 400px;
+    border-radius:10px;
+  
+}
+.image1{
+    width:70px;
+    height: 90px;
+    border-radius:100%;
+    display:inline;
+    padding: 50px;
+    
+}
+
+.sub{
+    color: blue;
+    font-weight: bold;
+   text-decoration: none;
+    display:block; 
+    border-top: 2px solid grey;
+    
+}
+.photo{
+    border:2px solid grey;
+    margin: 40px auto;
+    width:400px;
+     padding : 10px;
+    border-radius: 14px;
+ 
+}
+.img2{
+    max-width: 100%;
+    height: auto;
+    
+}
+.logo{
+    color: rgb(77, 74, 74);
+    padding:
+}
+.bt2{
+    color:darkblue;
+    font-weight:bold;
+    border:1px solid grey;
+    border-radius: 4px;
+    padding:5px;
+}
+.login{ 
+    margin:  40px auto;
+    width: 400px;
+    padding:10px;
+
+}
+.img4{
+    width:200px;
+    height:50%;
+    
+}
+.welcome{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.button4{
+    border-radius: 10px;
+    padding: 5px;
+    background-color: black;
+    color:white;
+    text-align: center;
+}
+.input{
+    border-radius:5px;
+    padding:2px;
+}
