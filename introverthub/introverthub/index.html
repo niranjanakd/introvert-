@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introvert's Club Login</title>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #5460c9, #3ad847);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .login-container {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        text-align: center;
+        width: 90%;
+        max-width: 350px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #444;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .show-pass {
+        font-size: 12px;
+        cursor: pointer;
+        color: #555;
+        display: block;
+        margin-top: 5px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #0d8e07;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+    }
+
+    button:hover {
+        background: #379ad4;
+    }
+
+    p.small-text {
+        font-size: 12px;
+        margin-top: 10px;
+        color: #666;
+    }
+
+    @media (max-width: 500px) {
+        h2 {
+            font-size: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+
+
+<div class="login-container">
+    <h1> Welcome to the Introvert's Club</h1>
+    <form onsubmit="return validateLogin()">
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Enter your cozy alias" required>
+        </div>
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Shhh... it's a secret" required>
+            <span class="show-pass" onclick="togglePassword()">👀 Show Password</span>
+        </div>
+        <button  type="submit"><a href="one.html">Log In</a></button>
+    </form>
+    <p class="small-text">Remember: If it gets too loud, you can always mute the world. 😉</p>
+</div>
+
+<script>
+function togglePassword() {
+    let pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+
+function validateLogin() {
+    let user = document.getElementById("username").value.trim();
+    let pass = document.getElementById("password").value.trim();
+
+    if(user === "" || pass === "") {
+        alert("Please fill out both fields 📝");
+        return false;
+    }
+
+    alert("Login successful! 🌟 Time to level up your social game!");
+    return true;
+}
+</script>
+
+</body>
+</html>
